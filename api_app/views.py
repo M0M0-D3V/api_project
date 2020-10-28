@@ -1,5 +1,7 @@
 from django.shortcuts import render
 import requests
+
+from mtgsdk import Card
 # Create your views here.
 
 
@@ -29,3 +31,17 @@ def index(request):
         'search_result': search_result
     }
     return render(request, 'index.html', context)
+
+
+def mtg(request):
+    response = requests.get('https://api.magicthegathering.io/v1/cards')
+    cards = response.json()
+    names = []
+    # print(cards)
+    # for i in range(len(cards)):
+    # names.append(cards.name)
+    context = {
+        'names': names,
+        'cards': cards,
+    }
+    return render(request, 'mtg.html', context)
