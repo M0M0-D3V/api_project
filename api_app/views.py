@@ -37,11 +37,21 @@ def mtg(request):
     response = requests.get('https://api.magicthegathering.io/v1/cards')
     cards = response.json()
     names = []
+    imageUrls = []
     # print(cards)
-    # for i in range(len(cards)):
-    # names.append(cards.name)
+    # for card in cards:
+    print(cards["cards"][0]["name"])
+    for i in range(len(cards["cards"])):
+        names.append(cards["cards"][i]["name"])
+        imageUrls.append(cards["cards"][i]["imgUrl"])
     context = {
         'names': names,
         'cards': cards,
+        'imageUrls': imageUrls
     }
     return render(request, 'mtg.html', context)
+
+
+def pokedex(request):
+    context = {}
+    return render(request, 'pokedex.html', context)

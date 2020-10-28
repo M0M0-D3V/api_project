@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    /* border: 1px dotted pink; */
+}
+
+body {
+    margin: auto;
+    background-color: #ffefd3;
+    padding: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    border: 1px solid #ffc49b;
+}
+
+.pokemon {
+    /* margin: auto; */
+    width: 70%;
+    max-height: 500px;
+    overflow: auto;
+
+}
+
+.dex {
+    padding: 20px;
+    width: 30%;
+    max-height: 500px;
+    border: 10px solid #ffc49b;
+}
+
+.dex h2,
+.dex h3,
+.dex p {
+    line-height: 40px;
+}
+
+.dex ul {
+    margin-left: 10px;
+    list-style: none;
+}
+
+.dex img {
+    width: 150px;
+    text-align: center;
+}
+
+h1 {
+    color: #294c60;
+    text-align: center;
+    padding: 20px;
+}
+
+/* https://coolors.co/001b2e-294c60-adb6c4-ffefd3-ffc49b */
